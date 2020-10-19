@@ -10,7 +10,7 @@ class GradientBack extends StatelessWidget {
       height: 250,
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.black, Colors.green],
+              colors: [Colors.blueAccent, Colors.green],
               begin: FractionalOffset(0.2, 0),
               end: FractionalOffset(1, 0.6),
               stops: [0, 0.6],

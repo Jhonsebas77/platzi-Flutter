@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './star.dart';
 
 // ignore: must_be_immutable
 class DescriptionPlace extends StatelessWidget {
@@ -9,6 +8,10 @@ class DescriptionPlace extends StatelessWidget {
   DescriptionPlace(this.namePlace, this.starts, this.descriptionPlace);
   @override
   Widget build(BuildContext context) {
+    final star = Container(
+      margin: EdgeInsets.only(top: 323, right: 3),
+      child: Icon(Icons.star, color: Colors.yellow),
+    );
     final descriptionText = Container(
       margin: EdgeInsets.only(left: 25, right: 20, top: 10),
       child: Text(
@@ -20,7 +23,7 @@ class DescriptionPlace extends StatelessWidget {
     final titleStars = Row(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(left: 20.0, right: 20),
+          margin: EdgeInsets.only(left: 20.0, right: 20, top: 323),
           child: Text(
             namePlace,
             style: TextStyle(
@@ -29,13 +32,7 @@ class DescriptionPlace extends StatelessWidget {
           ),
         ),
         Row(
-          children: <Widget>[
-            Star(25, "full"),
-            Star(25, "full"),
-            Star(25, "full"),
-            Star(25, "full"),
-            Star(25, "full")
-          ],
+          children: <Widget>[star, star, star, star, star],
         )
       ],
     );

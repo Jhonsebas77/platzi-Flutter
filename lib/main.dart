@@ -20,19 +20,15 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-          body: Stack(
-        children: <Widget>[
-          Container(
-              padding: EdgeInsets.only(top: 350.0),
-              child: ListView(
-                children: [
-                  new DescriptionPlace('Miami Resort', 5, descriptionDummy),
-                  ReviewList(),
-                ],
-              )),
-          GradientBack('Holi')
-        ],
-      )),
+          body: Stack(children: <Widget>[
+        ListView(
+          children: <Widget>[
+            DescriptionPlace('Miami Resort', 5, descriptionDummy),
+            ReviewList(),
+          ],
+        ),
+        GradientBack('Holi')
+      ])),
     );
   }
 }

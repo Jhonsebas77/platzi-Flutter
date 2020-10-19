@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './widget/description_place.dart';
 import './widget/review_list.dart';
-import './widget/gradient_back.dart';
+import './widget/header_appbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   String descriptionDummy =
       '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus odio ut lorem tincidunt viverra. Suspendisse iaculis congue commodo. In sagittis sollicitudin quam at aliquam. Phasellus finibus nibh a erat tincidunt dignissim. Suspendisse maximus turpis maximus justo egestas, a congue enim tempus. In enim sem, volutpat id massa gravida, pellentesque ullamcorper augue.''';
-  String titleScreen = 'Popular';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
             ReviewList(),
           ],
         ),
-        GradientBack(titleScreen)
+        HeaderAppBar()
       ])),
     );
   }

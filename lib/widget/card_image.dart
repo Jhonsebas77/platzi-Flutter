@@ -11,13 +11,13 @@ class CardImage extends StatelessWidget {
         width: 250,
         margin: EdgeInsets.only(top: 80, left: 20),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: AssetImage(pathImage)),
+            image:
+                DecorationImage(fit: BoxFit.fill, image: AssetImage(pathImage)),
             borderRadius: BorderRadius.all(Radius.circular(10)),
             shape: BoxShape.rectangle,
             boxShadow: <BoxShadow>[
               BoxShadow(
-                  color: Colors.black87, blurRadius: 15, offset: Offset(0, 7))
+                  color: Colors.black12, blurRadius: 15, offset: Offset(0, 7))
             ]));
     return card;
   }

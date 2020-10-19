@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './star.dart';
 
 // ignore: must_be_immutable
 class Review extends StatelessWidget {
@@ -24,10 +25,23 @@ class Review extends StatelessWidget {
       margin: EdgeInsets.only(
         left: 20,
       ),
-      child: Text(details,
-          textAlign: TextAlign.left,
-          style:
-              TextStyle(fontSize: 13, fontFamily: 'lato', color: Colors.grey)),
+      child: Row(
+        children: <Widget>[
+          Text(details,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                  fontSize: 13, fontFamily: 'lato', color: Colors.grey)),
+          Row(
+            children: <Widget>[
+              Star(15),
+              Star(15),
+              Star(15),
+              Star(15),
+              Star(15)
+            ],
+          )
+        ],
+      ),
     );
     final userName = Container(
       margin: EdgeInsets.only(

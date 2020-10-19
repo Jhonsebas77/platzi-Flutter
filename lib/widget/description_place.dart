@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './button_purple.dart';
 
 // ignore: must_be_immutable
 class DescriptionPlace extends StatelessWidget {
@@ -37,7 +38,8 @@ class DescriptionPlace extends StatelessWidget {
       ],
     );
     final container = Column(
-      children: <Widget>[titleStars, descriptionText],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[titleStars, descriptionText, ButtonPurple('Navigate')],
     );
     return container;
   }

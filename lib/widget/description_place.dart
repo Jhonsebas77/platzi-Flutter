@@ -34,12 +34,13 @@ class DescriptionPlace extends StatelessWidget {
           margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 20),
           child: Text(
             namePlace,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+            style: TextStyle(
+                fontFamily: "Lato", fontSize: 30, fontWeight: FontWeight.w900),
             textAlign: TextAlign.center,
           ),
         ),
         Row(
-          children: <Widget>[star, starHalf, star, starEmpty, star],
+          children: <Widget>[star, star, star, star, star],
         )
       ],
     );

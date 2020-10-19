@@ -33,11 +33,11 @@ class Review extends StatelessWidget {
                   fontSize: 13, fontFamily: 'lato', color: Colors.grey)),
           Row(
             children: <Widget>[
-              Star(15),
-              Star(15),
-              Star(15),
-              Star(15),
-              Star(15)
+              Star(15, "full"),
+              Star(15, "full"),
+              Star(15, "half"),
+              Star(15, "empty"),
+              Star(15, "empty")
             ],
           )
         ],

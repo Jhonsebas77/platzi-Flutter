@@ -26,12 +26,14 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("Hello World"),
           ),
-          body: Column(
-            children: [
-              new DescriptionPlace('Miami Resort', 5, descriptionDummy),
-              Review(pathImage, nameUser, details, comment)
-            ],
-          )),
+          body: Container(
+              margin: EdgeInsets.only(top: 320.0),
+              child: Column(
+                children: [
+                  new DescriptionPlace('Miami Resort', 5, descriptionDummy),
+                  Review(pathImage, nameUser, details, comment)
+                ],
+              ))),
     );
   }
 }

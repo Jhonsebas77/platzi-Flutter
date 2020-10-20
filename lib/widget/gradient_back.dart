@@ -7,10 +7,10 @@ class GradientBack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 100,
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.blueAccent, Colors.green],
+              colors: [Colors.redAccent, Colors.red],
               begin: FractionalOffset(0.2, 0),
               end: FractionalOffset(1, 0.6),
               stops: [0, 0.6],
@@ -23,7 +23,7 @@ class GradientBack extends StatelessWidget {
             fontFamily: 'Lato',
             fontWeight: FontWeight.bold),
       ),
-      alignment: Alignment(-0.9, -0.6),
+      alignment: Alignment.center,
     );
   }
 }

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import './star.dart';
 
 // ignore: must_be_immutable
 class Review extends StatelessWidget {
-  String pathImage = "src/Assets/Images/photo_jsob.png";
-  String nameUser = 'Sebastian Otalora';
-  String details = '1 Review 5 photos';
-  String comment = 'There is a Amatzing Place Here';
+  String pathImage = "src/Assets/Images/1.png";
+  String pokemonName = 'Bulbasaur';
+  String pokemonType = 'Planta / Veneno';
+  String pathImagePokeBall = "src/Assets/Images/ultraball.png";
 
-  Review(this.pathImage, this.nameUser, this.details, this.comment);
+  Review(this.pathImage, this.pokemonName, this.pokemonType);
 
   @override
   Widget build(BuildContext context) {
@@ -16,55 +15,52 @@ class Review extends StatelessWidget {
       margin: EdgeInsets.only(
         left: 20,
       ),
-      child: Text(comment,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-              fontSize: 13, fontFamily: 'lato', fontWeight: FontWeight.w900)),
-    );
-    final userInfo = Container(
-      margin: EdgeInsets.only(
-        left: 20,
-      ),
-      child: Row(
-        children: <Widget>[
-          Text(details,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontSize: 13, fontFamily: 'lato', color: Colors.grey)),
-          Row(
-            children: <Widget>[
-              Star(15, "full"),
-              Star(15, "full"),
-              Star(15, "half"),
-              Star(15, "empty"),
-              Star(15, "empty")
-            ],
-          )
-        ],
+      child: Text(
+        pokemonType,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+            fontSize: 13, fontFamily: 'lato', fontWeight: FontWeight.w900),
       ),
     );
     final userName = Container(
       margin: EdgeInsets.only(
         left: 20,
       ),
-      child: Text(nameUser,
+      child: Text(pokemonName,
           textAlign: TextAlign.left,
           style: TextStyle(fontSize: 17, fontFamily: 'lato')),
     );
-    final userDetails = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[userName, userInfo, userComment],
+    final imgPokeball = Container(
+      margin: EdgeInsets.only(top: 20, left: 20, right: 30),
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        shape: BoxShape.rectangle,
+        image: DecorationImage(
+          fit: BoxFit.contain,
+          image: AssetImage(pathImagePokeBall),
+        ),
+      ),
+    );
+    final pokemonDetails = Row(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[userName, userComment],
+        ),
+      ],
+      crossAxisAlignment: CrossAxisAlignment.center,
     );
     final photo = Container(
         margin: EdgeInsets.only(top: 20, left: 20),
         width: 80,
         height: 80,
         decoration: BoxDecoration(
-            shape: BoxShape.circle,
+            shape: BoxShape.rectangle,
             image: DecorationImage(
-                fit: BoxFit.cover, image: AssetImage(pathImage))));
+                fit: BoxFit.fill, image: AssetImage(pathImage))));
     return Row(
-      children: <Widget>[photo, userDetails],
+      children: <Widget>[photo, Expanded(child: pokemonDetails), imgPokeball],
     );
   }
 }

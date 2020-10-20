@@ -6,13 +6,17 @@ class FloatingActionButtonGreen extends StatefulWidget {
       _FloatingActionButtonGreenState();
 }
 
-class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen> {
+class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen>
+    with AutomaticKeepAliveClientMixin {
   bool isPressed = false;
   void onPressedFav() {
     setState(() {
       isPressed = !isPressed;
     });
   }
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {

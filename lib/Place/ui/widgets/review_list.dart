@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './review.dart';
+import 'review.dart';
 
 // ignore: must_be_immutable
 class ReviewList extends StatelessWidget {

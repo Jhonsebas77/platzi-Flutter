@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import './../../lib/widget/review.dart';
+import './../../lib/Place/ui/widgets/review.dart';
 
 void main() {
   String pathImage = "src/Assets/Images/photo_jsob.png";

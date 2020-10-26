@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './gradient_back.dart';
-import 'card_image_list.dart';
+import '../../../widget/gradient_back.dart';
+import '../widgets/card_image_list.dart';
 
 // ignore: must_be_immutable
 class HeaderAppBar extends StatelessWidget {

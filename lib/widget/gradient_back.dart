@@ -17,6 +17,7 @@ class GradientBack extends StatelessWidget {
               tileMode: TileMode.clamp)),
       child: Text(
         title,
+        textDirection: TextDirection.ltr,
         style: TextStyle(
             color: Colors.white,
             fontSize: 30,

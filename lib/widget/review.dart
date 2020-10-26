@@ -17,6 +17,7 @@ class Review extends StatelessWidget {
         left: 20,
       ),
       child: Text(comment,
+          textDirection: TextDirection.ltr,
           textAlign: TextAlign.left,
           style: TextStyle(
               fontSize: 13, fontFamily: 'lato', fontWeight: FontWeight.w900)),
@@ -26,12 +27,15 @@ class Review extends StatelessWidget {
         left: 20,
       ),
       child: Row(
+        textDirection: TextDirection.ltr,
         children: <Widget>[
           Text(details,
+              textDirection: TextDirection.ltr,
               textAlign: TextAlign.left,
               style: TextStyle(
                   fontSize: 13, fontFamily: 'lato', color: Colors.grey)),
           Row(
+            textDirection: TextDirection.ltr,
             children: <Widget>[
               Star(15, "full"),
               Star(15, "full"),
@@ -48,10 +52,12 @@ class Review extends StatelessWidget {
         left: 20,
       ),
       child: Text(nameUser,
+          textDirection: TextDirection.ltr,
           textAlign: TextAlign.left,
           style: TextStyle(fontSize: 17, fontFamily: 'lato')),
     );
     final userDetails = Column(
+      textDirection: TextDirection.ltr,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[userName, userInfo, userComment],
     );
@@ -64,6 +70,7 @@ class Review extends StatelessWidget {
             image: DecorationImage(
                 fit: BoxFit.cover, image: AssetImage(pathImage))));
     return Row(
+      textDirection: TextDirection.ltr,
       children: <Widget>[photo, userDetails],
     );
   }

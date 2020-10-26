@@ -46,7 +46,7 @@ class ProfilePlaceInfo extends StatelessWidget {
           fontFamily: 'Lato',
           fontSize: 14.0,
           fontWeight: FontWeight.bold,
-          color: Colors.amber),
+          color: Colors.purpleAccent),
     );
 
     final card = Container(

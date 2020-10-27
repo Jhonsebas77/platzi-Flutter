@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// import './widget/platzi_trips.dart';
-import './widget/platzi_trips_cupertino.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'platzi_trips_cupertino.dart';
+import 'package:platzi_trips_app/Place/bloc/bloc_place.dart';
+import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,14 +14,18 @@ class MyApp extends StatelessWidget {
       '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus odio ut lorem tincidunt viverra. Suspendisse iaculis congue commodo. In sagittis sollicitudin quam at aliquam. Phasellus finibus nibh a erat tincidunt dignissim. Suspendisse maximus turpis maximus justo egestas, a congue enim tempus. In enim sem, volutpat id massa gravida, pellentesque ullamcorper augue.''';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      // home: PlatziTrips(),
-      home: PlatziTripsCupertino(),
-    );
+    return BlocProvider(
+        child: BlocProvider(
+          child: MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.deepPurple,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
+            home: PlatziTripsCupertino(),
+          ),
+          bloc: PlaceBloc(),
+        ),
+        bloc: UserBloc());
   }
 }

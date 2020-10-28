@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'platzi_trips_cupertino.dart';
+// import 'platzi_trips_cupertino.dart';
 import 'package:platzi_trips_app/Place/bloc/bloc_place.dart';
 import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
+import 'package:platzi_trips_app/User/ui/screens/sign_in_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.deepPurple,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
-            home: PlatziTripsCupertino(),
+            // home: PlatziTripsCupertino(),
+            home: SignInScreen(),
           ),
           bloc: PlaceBloc(),
         ),

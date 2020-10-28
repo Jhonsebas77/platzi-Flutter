@@ -7,6 +7,11 @@ import 'package:platzi_trips_app/User/repository/auth_repository.dart';
 class UserBloc implements Bloc {
   final authRepository = AuthRepository();
 
+  //? Flujo de datos - Stream
+  Stream<FirebaseUser> streamFirebase =
+      FirebaseAuth.instance.onAuthStateChanged;
+  Stream<FirebaseUser> get authStatus => streamFirebase; // BlowMind
+
   ///? Casos de Uso
   ///? 1. SignIn a la aplicacion con Firebase
   Future<FirebaseUser> signIn() {

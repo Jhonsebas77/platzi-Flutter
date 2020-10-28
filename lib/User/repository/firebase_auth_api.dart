@@ -17,6 +17,12 @@ class FirebaseAuthAPI {
     FirebaseUser user = authResult.user;
     return user;
   }
+
+  signOut() async {
+    await _auth.signOut().then((onValue) => print('Sesion Finalizada FB'));
+    googleSignIn.signOut();
+    print('<-Sesion Finalizada->');
+  }
 }
 
 class EmailAndPasswordAPI {

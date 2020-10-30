@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/User/model/model.dart';
+import 'package:platzi_trips_app/User/model/user.dart';
 
 class UserInfo extends StatelessWidget {
   User user;

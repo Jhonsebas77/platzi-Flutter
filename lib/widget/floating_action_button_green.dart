@@ -26,6 +26,7 @@ class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen>
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: null,
       backgroundColor: Colors.green,
       mini: true,
       tooltip: "Fav",

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
-  final String hint;
+  final String hintText;
   final TextInputType inputType;
   final TextEditingController controller;
   int maxLines = 1;
 
   TextInput(
       {Key key,
-      @required this.hint,
+      @required this.hintText,
       @required this.inputType,
       @required this.controller,
       this.maxLines});
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
         controller: controller,
         keyboardType: inputType,
@@ -28,15 +28,15 @@ class TextInput extends StatelessWidget {
         ),
         decoration: InputDecoration(
             filled: true,
-            fillColor: Colors.deepOrange,
+            fillColor: Colors.black26,
             border: InputBorder.none,
-            hintText: hint,
+            hintText: hintText,
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.deepOrange),
+              borderSide: BorderSide(color: Colors.black26),
               borderRadius: BorderRadius.all(Radius.circular(9)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.deepOrange),
+              borderSide: BorderSide(color: Colors.black26),
               borderRadius: BorderRadius.all(Radius.circular(9)),
             )),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/title_input_location.dart';
 import 'package:platzi_trips_app/widget/gradient_back.dart';
 import 'package:platzi_trips_app/widget/text_input.dart';
 import 'package:platzi_trips_app/widget/title_header.dart';
@@ -13,6 +14,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   Widget build(BuildContext context) {
     final _controllerTitleText = TextEditingController();
     final _controllerDescriptionText = TextEditingController();
+    final _controllerPlaceText = TextEditingController();
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
@@ -67,6 +69,14 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   inputType: TextInputType.multiline,
                   maxLines: 4,
                   controller: _controllerDescriptionText,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: TitleInputLocation(
+                    hintTex: 'Add Location',
+                    iconData: Icons.location_on_outlined,
+                    controller: _controllerPlaceText,
+                  ),
                 )
               ],
             ),

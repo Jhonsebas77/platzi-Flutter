@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/widget/gradient_back.dart';
+import 'package:platzi_trips_app/widget/title_header.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -32,7 +34,15 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         Navigator.pop(context);
                       },
                     ),
-                  ))
+                  )),
+              Flexible(
+                  child: Container(
+                width: screenWidth,
+                child: TitleHeader(
+                  title: 'Add a new place',
+                  padding: EdgeInsets.only(top: 45, left: 20, right: 10),
+                ),
+              )),
             ],
           )
         ],

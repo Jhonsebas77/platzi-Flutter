@@ -4,7 +4,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'Place/ui/screens/home_trips.dart';
 import 'User/ui/screens/profile_trips.dart';
-import 'Place/ui/screens/search_trips.dart';
+import 'Search/ui/screens/search_trips.dart';
 
 class PlatziTripsCupertino extends StatelessWidget {
   @override

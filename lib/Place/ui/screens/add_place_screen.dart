@@ -1,10 +1,13 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/card_image_with_flaBtn.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/title_input_location.dart';
 import 'package:platzi_trips_app/widget/gradient_back.dart';
 import 'package:platzi_trips_app/widget/text_input.dart';
 import 'package:platzi_trips_app/widget/title_header.dart';
 
 class AddPlaceScreen extends StatefulWidget {
+  File image;
   @override
   _AddPlaceScreenState createState() => _AddPlaceScreenState();
 }
@@ -54,7 +57,17 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             margin: EdgeInsets.only(top: 120, bottom: 20),
             child: ListView(
               children: <Widget>[
-                Container(), // Foto
+                Container(
+                  alignment: Alignment.center,
+                  child: CardImageWithFabIcon(
+                    pathImage: 'src/Assets/Images/IMG_4.jpg',
+                    // pathImage: widget.image.path,
+                    iconData: Icons.camera_alt_rounded,
+                    width: 350.0,
+                    height: 250.0,
+                    left: 0,
+                  ),
+                ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   child: TextInput(

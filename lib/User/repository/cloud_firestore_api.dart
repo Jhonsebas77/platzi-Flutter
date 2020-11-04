@@ -23,7 +23,7 @@ class CloudFirestoreAPI {
     }, merge: true);
   }
 
-  Future<void> updatePlaceDate(Place place) async {
+  Future<void> updatePlaceData(Place place) async {
     CollectionReference refPlaces = _db.collection(PLACES);
     String uid = (await _auth.currentUser()).uid;
     await refPlaces.add(

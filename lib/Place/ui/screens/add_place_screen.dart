@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:platzi_trips_app/Place/model/place.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/card_image_with_flaBtn.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/title_input_location.dart';
+import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'package:platzi_trips_app/widget/button_purple.dart';
 import 'package:platzi_trips_app/widget/gradient_back.dart';
 import 'package:platzi_trips_app/widget/text_input.dart';
@@ -19,6 +22,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     final _controllerTitleText = TextEditingController();
     final _controllerDescriptionText = TextEditingController();
     final _controllerPlaceText = TextEditingController();
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
@@ -68,6 +72,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                     width: 350.0,
                     height: 250.0,
                     left: 0,
+                    onPressedFabIcon: () {},
                   ),
                 ),
                 Container(
@@ -98,9 +103,19 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   child: ButtonPurple(
                     buttonText: 'Add Place',
                     onPressed: () {
-                      // Firebase Storage
-                      // Return a url
-                      // Cloud Firestore -> new Place()
+                      userBloc
+                          .updatePlaceData(
+                        Place(
+                            name: _controllerTitleText.text,
+                            description: _controllerDescriptionText.text,
+                            urlImage: null,
+                            userOwner: null,
+                            likes: 0),
+                      )
+                          .whenComplete(() {
+                        print('-->Place Add<--');
+                        Navigator.pop(context);
+                      });
                     },
                   ),
                 )

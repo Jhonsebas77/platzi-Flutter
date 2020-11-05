@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips_app/Place/model/place.dart';
+import 'package:platzi_trips_app/Place/repository/firebase_storage_repository.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 import 'package:platzi_trips_app/User/repository/auth_repository.dart';
 import 'package:platzi_trips_app/User/repository/cloud_firestore_repository.dart';
@@ -9,22 +12,24 @@ import 'package:platzi_trips_app/User/repository/cloud_firestore_repository.dart
 
 class UserBloc implements Bloc {
   final authRepository = AuthRepository();
+  final _firebaseStorageRepository = FirebaseStorageRepository();
 
   //? Flujo de datos - Stream
   Stream<FirebaseUser> streamFirebase =
       FirebaseAuth.instance.onAuthStateChanged;
   Stream<FirebaseUser> get authStatus => streamFirebase; // BlowMind
+  Future<FirebaseUser> get currentUser => FirebaseAuth.instance.currentUser();
 
-  ///? Casos de Uso
-  ///? 1. SignIn a la aplicacion con Firebase
+  //? Casos de Uso
+  //? 1. SignIn a la aplicacion con Firebase
   Future<FirebaseUser> signIn() => authRepository.signInFirebase();
 
-  ///? 2. Registrar usuario en la Base de Datos
+  //? 2. Registrar usuario en la Base de Datos
   final cloudFirestoreRepository = CloudFirestoreRepository();
   void updateUserData(User user) =>
       cloudFirestoreRepository.updateUserDataFirestore(user);
 
-  ///? 3. SignIn a la aplicacion con Firebase
+  //? 3. SignIn a la aplicacion con Firebase
   signOut() {
     authRepository.signOut();
   }
@@ -33,6 +38,9 @@ class UserBloc implements Bloc {
   Future<void> updatePlaceData(Place place) =>
       cloudFirestoreRepository.updatePlaceData(place);
 
+  //? 5. Subir la foto a Firebase Storage
+  Future<StorageUploadTask> uploadFile(String path, File image) =>
+      _firebaseStorageRepository.uploadFile(path, image);
   @override
   void dispose() {}
 }

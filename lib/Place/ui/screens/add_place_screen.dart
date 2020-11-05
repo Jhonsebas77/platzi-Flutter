@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips_app/Place/model/place.dart';
@@ -103,18 +104,33 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   child: ButtonPurple(
                     buttonText: 'Add Place',
                     onPressed: () {
-                      userBloc
-                          .updatePlaceData(
-                        Place(
-                            name: _controllerTitleText.text,
-                            description: _controllerDescriptionText.text,
-                            urlImage: null,
-                            userOwner: null,
-                            likes: 0),
-                      )
-                          .whenComplete(() {
-                        print('-->Place Add<--');
-                        Navigator.pop(context);
+                      userBloc.currentUser.then((FirebaseUser user) async {
+                        final String uid = (await userBloc.currentUser).uid;
+                        final uploadTask = await userBloc.uploadFile(
+                            '$uid/${DateTime.now().toString()}.jpg',
+                            widget.image);
+                        final taskSnapshot = await uploadTask.onComplete;
+                        final imageUrl =
+                            await taskSnapshot.ref.getDownloadURL();
+                        if (uploadTask == null ||
+                            uid == null ||
+                            taskSnapshot == null ||
+                            imageUrl == null) {
+                          print('->BAD<-');
+                          return;
+                        }
+                        userBloc
+                            .updatePlaceData(
+                          Place(
+                              name: _controllerTitleText.text,
+                              description: _controllerDescriptionText.text,
+                              urlImage: imageUrl,
+                              likes: 0),
+                        )
+                            .whenComplete(() {
+                          print('-->Place Add<--');
+                          Navigator.pop(context);
+                        });
                       });
                     },
                   ),

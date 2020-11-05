@@ -44,6 +44,7 @@ class DescriptionPlace extends StatelessWidget {
         descriptionText,
         ButtonPurple(
           buttonText: 'Navigate',
+          onPressed: () {},
         )
       ],
     );

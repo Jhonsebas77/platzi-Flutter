@@ -11,9 +11,9 @@ class User {
 
   User(
       {@required this.name,
-      @required this.uid,
       @required this.email,
       @required this.photoURL,
+      this.uid,
       this.myPlaces,
       this.myFavoritePlaces});
 }

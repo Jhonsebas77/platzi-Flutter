@@ -19,6 +19,7 @@ class CardImageList extends StatelessWidget {
             height: height,
             width: width,
             left: left,
+            onPressedFabIcon: () {},
           ),
           CardImageWithFabIcon(
             pathImage: 'src/Assets/Images/IMG_2.jpg',
@@ -26,6 +27,7 @@ class CardImageList extends StatelessWidget {
             height: height,
             width: width,
             left: left,
+            onPressedFabIcon: () {},
           ),
           CardImageWithFabIcon(
             pathImage: 'src/Assets/Images/IMG_3.jpg',
@@ -33,6 +35,7 @@ class CardImageList extends StatelessWidget {
             height: height,
             width: width,
             left: left,
+            onPressedFabIcon: () {},
           ),
           CardImageWithFabIcon(
             pathImage: 'src/Assets/Images/IMG_4.jpg',
@@ -40,6 +43,7 @@ class CardImageList extends StatelessWidget {
             height: height,
             width: width,
             left: left,
+            onPressedFabIcon: () {},
           ),
           CardImageWithFabIcon(
             pathImage: 'src/Assets/Images/IMG_5.jpg',
@@ -47,6 +51,7 @@ class CardImageList extends StatelessWidget {
             height: height,
             width: width,
             left: left,
+            onPressedFabIcon: () {},
           )
         ],
       ),

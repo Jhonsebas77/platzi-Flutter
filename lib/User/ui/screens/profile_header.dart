@@ -5,6 +5,7 @@ import 'package:platzi_trips_app/User/model/user.dart';
 import 'package:platzi_trips_app/User/ui/widgets/user_info.dart';
 import 'package:platzi_trips_app/User/ui/widgets/button_bar.dart';
 
+// ignore: must_be_immutable
 class ProfileHeader extends StatelessWidget {
   UserBloc userBloc;
   User user;

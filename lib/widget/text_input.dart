@@ -4,14 +4,14 @@ class TextInput extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
   final TextEditingController controller;
-  int maxLines = 1;
+  final int maxLines;
 
   TextInput(
       {Key key,
       @required this.hintText,
       @required this.inputType,
       @required this.controller,
-      this.maxLines});
+      this.maxLines = 1});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,12 +23,12 @@ class TextInput extends StatelessWidget {
         style: TextStyle(
           fontSize: 15,
           fontFamily: 'Lato',
-          color: Colors.blueGrey,
+          color: Colors.grey,
           fontWeight: FontWeight.bold,
         ),
         decoration: InputDecoration(
             filled: true,
-            fillColor: Colors.black26,
+            fillColor: Colors.black12,
             border: InputBorder.none,
             hintText: hintText,
             enabledBorder: OutlineInputBorder(

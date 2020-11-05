@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TitleInputLocation extends StatelessWidget {
-  final String hintTex;
+  final String hintText;
   final TextEditingController controller;
   final IconData iconData;
 
   TitleInputLocation({
     Key key,
-    @required this.hintTex,
+    @required this.hintText,
     @required this.iconData,
     @required this.controller,
   });
@@ -24,7 +24,7 @@ class TitleInputLocation extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         decoration: InputDecoration(
-            hintText: hintTex,
+            hintText: hintText,
             suffixIcon: Icon(iconData),
             fillColor: Colors.white,
             filled: true,

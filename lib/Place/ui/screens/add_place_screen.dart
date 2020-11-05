@@ -11,9 +11,13 @@ import 'package:platzi_trips_app/widget/gradient_back.dart';
 import 'package:platzi_trips_app/widget/text_input.dart';
 import 'package:platzi_trips_app/widget/title_header.dart';
 
+// ignore: must_be_immutable
 class AddPlaceScreen extends StatefulWidget {
-  File image;
-  AddPlaceScreen({Key key, this.image});
+  final File image;
+  final _controllerTitleText = TextEditingController();
+  final _controllerDescriptionText = TextEditingController();
+  final _controllerPlaceText = TextEditingController();
+  AddPlaceScreen({Key key, @required this.image});
   @override
   _AddPlaceScreenState createState() => _AddPlaceScreenState();
 }
@@ -21,9 +25,6 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
-    final _controllerTitleText = TextEditingController();
-    final _controllerDescriptionText = TextEditingController();
-    final _controllerPlaceText = TextEditingController();
     UserBloc userBloc = BlocProvider.of<UserBloc>(context);
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -80,23 +81,23 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   margin: EdgeInsets.only(bottom: 20),
                   child: TextInput(
                     hintText: 'Title',
-                    inputType: null,
+                    inputType: TextInputType.name,
                     maxLines: 1,
-                    controller: _controllerTitleText,
+                    controller: widget._controllerTitleText,
                   ),
                 ),
                 TextInput(
                   hintText: 'Description',
                   inputType: TextInputType.multiline,
                   maxLines: 4,
-                  controller: _controllerDescriptionText,
+                  controller: widget._controllerDescriptionText,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   child: TitleInputLocation(
-                    hintTex: 'Add Location',
+                    hintText: 'Add Location',
                     iconData: Icons.location_on_outlined,
-                    controller: _controllerPlaceText,
+                    controller: widget._controllerPlaceText,
                   ),
                 ),
                 Container(
@@ -122,8 +123,9 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         userBloc
                             .updatePlaceData(
                           Place(
-                              name: _controllerTitleText.text,
-                              description: _controllerDescriptionText.text,
+                              name: widget._controllerTitleText.text,
+                              description:
+                                  widget._controllerDescriptionText.text,
                               urlImage: imageUrl,
                               likes: 0),
                         )

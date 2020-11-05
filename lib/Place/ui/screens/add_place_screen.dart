@@ -12,6 +12,7 @@ import 'package:platzi_trips_app/widget/title_header.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   File image;
+  AddPlaceScreen({Key key, this.image});
   @override
   _AddPlaceScreenState createState() => _AddPlaceScreenState();
 }
@@ -66,8 +67,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   alignment: Alignment.center,
                   margin: EdgeInsets.only(bottom: 20),
                   child: CardImageWithFabIcon(
-                    pathImage: 'src/Assets/Images/IMG_4.jpg',
-                    // pathImage: widget.image.path,
+                    pathImage: widget.image.path,
                     iconData: Icons.camera_alt_rounded,
                     width: 350.0,
                     height: 250.0,

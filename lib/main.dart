@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
         child: BlocProvider(
           child: MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Platzi Trips',
             debugShowCheckedModeBanner: false, // Remove Debug Banner
             theme: ThemeData(
               primarySwatch: Colors.deepPurple,

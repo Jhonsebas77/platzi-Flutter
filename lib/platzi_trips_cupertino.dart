@@ -13,11 +13,13 @@ class PlatziTripsCupertino extends StatelessWidget {
       bottomNavigationBar: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.indigo), label: "Home"),
+              icon: Icon(Icons.home, color: Color(0xFFF57958)), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search, color: Colors.indigo), label: "Search"),
+              icon: Icon(Icons.search, color: Color(0xFFF57958)),
+              label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.indigo), label: "Person"),
+              icon: Icon(Icons.person, color: Color(0xFFF57958)),
+              label: "Person"),
         ]),
         tabBuilder: (BuildContext context, int index) {
           switch (index) {

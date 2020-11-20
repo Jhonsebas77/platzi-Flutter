@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             title: 'Platzi Trips',
             debugShowCheckedModeBanner: false, // Remove Debug Banner
             theme: ThemeData(
-              primarySwatch: Colors.deepPurple,
+              primarySwatch: Colors.amber,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             home: SignInScreen(),

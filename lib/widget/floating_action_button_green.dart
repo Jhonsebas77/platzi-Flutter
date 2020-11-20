@@ -34,11 +34,14 @@ class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen>
   Widget build(BuildContext context) {
     return FloatingActionButton(
       heroTag: null,
-      backgroundColor: Colors.green,
+      backgroundColor: Color(0xFFF57958),
       mini: true,
       tooltip: "Fav",
       onPressed: widget.onPressed,
-      child: Icon(widget.iconData),
+      child: Icon(
+        widget.iconData,
+        color: Colors.white,
+      ),
       // child: Icon(isPressed == true ? Icons.favorite : Icons.favorite_border),
     );
   }

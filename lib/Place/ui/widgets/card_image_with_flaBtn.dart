@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../widget/floating_action_button_green.dart';
 
@@ -31,7 +32,7 @@ class CardImageWithFabIcon extends StatelessWidget {
               image: pathImage.contains('Assets')
                   ? AssetImage(pathImage)
                   : pathImage.contains('http')
-                      ? NetworkImage(pathImage)
+                      ? CachedNetworkImageProvider(pathImage)
                       : FileImage(File(pathImage)),
             ),
             borderRadius: BorderRadius.all(Radius.circular(10)),

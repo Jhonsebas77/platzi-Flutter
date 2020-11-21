@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips_app/Place/model/place.dart';
 import 'package:platzi_trips_app/Place/repository/firebase_storage_repository.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/card_image_with_flaBtn.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 import 'package:platzi_trips_app/User/repository/auth_repository.dart';
 import 'package:platzi_trips_app/User/repository/cloud_firestore_api.dart';
@@ -50,8 +51,11 @@ class UserBloc implements Bloc {
   Stream<QuerySnapshot> placesListStream =
       Firestore.instance.collection(CloudFirestoreAPI().PLACES).snapshots();
   Stream<QuerySnapshot> get placesStream => placesListStream;
-  List<ProfilePlace> buildPlaces(List<DocumentSnapshot> placesListSnaphot) =>
-      _cloudFirestoreRepository.buildPlaces(placesListSnaphot);
+  List<ProfilePlace> buildMyPlaces(List<DocumentSnapshot> placesListSnapshot) =>
+      _cloudFirestoreRepository.buildMyPlaces(placesListSnapshot);
+  List<CardImageWithFabIcon> buildPlaces(
+          List<DocumentSnapshot> placesListSnapshot) =>
+      _cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
   //? 7. Filtrar por usuario la data
   Stream<QuerySnapshot> myPlacesListStream(String uid) => Firestore.instance

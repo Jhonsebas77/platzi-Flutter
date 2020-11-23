@@ -12,16 +12,16 @@ class SearchTrips extends StatelessWidget {
           children: [
             TripCard(
               destination: 'Cupertino',
-              finalDate: '5 de Oct',
-              initDate: '7 de Dic',
+              initDate: '5 de Oct',
+              finalDate: '7 de Dic',
               pathImage: "src/Assets/Images/IMG_1.jpg",
               function: () => print('Press Card and Go TO -> Cupertino'),
               productList: ['HOTEL', 'HOTEL', 'FLIGHT'],
             ),
             TripCard(
               destination: 'Miami',
-              finalDate: '8 de Dic',
-              initDate: '4 de Ene',
+              initDate: '8 de Dic',
+              finalDate: '4 de Ene',
               pathImage: "src/Assets/Images/IMG_3.jpg",
               function: () => print('Press Card and Go TO -> Miami'),
               productList: ['FLIGHT', 'HOTEL'],

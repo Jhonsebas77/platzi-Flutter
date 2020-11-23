@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 
@@ -16,8 +15,7 @@ class UserInfo extends StatelessWidget {
               color: Colors.white, width: 2.0, style: BorderStyle.solid),
           shape: BoxShape.circle,
           image: DecorationImage(
-              fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(user.photoURL))),
+              fit: BoxFit.cover, image: NetworkImage(user.photoURL))),
     );
 
     final userInfo = Column(

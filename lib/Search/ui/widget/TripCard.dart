@@ -4,14 +4,18 @@ class TripCard extends StatelessWidget {
   final String destination;
   final String initDate;
   final String finalDate;
-  TripCard(
-      {Key key,
-      @required this.destination,
-      @required this.finalDate,
-      @required this.initDate});
+  final Function function;
+  final String pathImage;
+  TripCard({
+    Key key,
+    @required this.destination,
+    @required this.finalDate,
+    @required this.initDate,
+    @required this.function,
+    @required this.pathImage,
+  });
   @override
   Widget build(BuildContext context) {
-    String pathImage = "src/Assets/Images/IMG_1.jpg";
     double width = 328;
     double height = 230;
     double left = 16;
@@ -21,10 +25,14 @@ class TripCard extends StatelessWidget {
     final card = Container(
         height: height,
         width: width,
-        margin: EdgeInsets.only(left: left, right: right),
+        margin: EdgeInsets.only(
+          left: left,
+          right: right,
+          bottom: 16,
+        ),
         decoration: BoxDecoration(
             image: DecorationImage(
-              fit: pathImage.contains('Assets') ? BoxFit.cover : BoxFit.contain,
+              fit: BoxFit.cover,
               image: AssetImage(pathImage),
             ),
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -36,45 +44,31 @@ class TripCard extends StatelessWidget {
                 offset: Offset(0, 7),
               )
             ]));
-    final destinationText = Container(
-        margin: EdgeInsets.only(left: 16),
-        alignment: Alignment.bottomLeft,
-        child: Text(
-          destination,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-          ),
-        ));
-    final datesText = Container(
-        margin: EdgeInsets.only(left: 16),
-        alignment: Alignment.bottomLeft,
-        child: Text(
-          '$initDate - $finalDate',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-          ),
-        ));
     final gradient = Container(
         height: height,
         width: width,
-        margin: EdgeInsets.only(left: left, right: right),
+        margin: EdgeInsets.only(
+          left: left,
+          right: right,
+          bottom: 16,
+        ),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 16, left: 16, bottom: 122),
+              margin: EdgeInsets.only(
+                top: 16,
+                left: 16,
+                bottom: 122,
+              ),
               child: Row(
                 children: [
-                  productIcon('hola'),
-                  productIcon('hola'),
+                  productIcon('HOTEL'),
+                  productIcon('FLIGHT'),
                 ],
               ),
             ),
-            destinationText,
-            datesText
+            destinationTrip(destination),
+            datesTrip(initDate, finalDate)
           ],
         ),
         decoration: BoxDecoration(
@@ -94,7 +88,7 @@ class TripCard extends StatelessWidget {
               )
             ]));
     return InkWell(
-        onTap: () {},
+        onTap: function,
         child: Stack(
           alignment: Alignment(0.9, 1.1),
           children: <Widget>[
@@ -103,6 +97,12 @@ class TripCard extends StatelessWidget {
           ],
         ));
   }
+}
+
+showIconProduct(String product) {
+  IconData iconHotel = Icons.hotel;
+  IconData iconFlight = Icons.airplanemode_active_outlined;
+  return product == 'HOTEL' ? iconHotel : iconFlight;
 }
 
 Widget productIcon(String product) {
@@ -117,10 +117,38 @@ Widget productIcon(String product) {
       height: 26,
       width: 26,
       child: Icon(
-        Icons.airplanemode_active_outlined,
+        showIconProduct(product),
         color: Colors.black,
         size: 20,
       ),
     ),
   );
+}
+
+Widget datesTrip(String initDate, String finalDate) {
+  return Container(
+      margin: EdgeInsets.only(left: 16),
+      alignment: Alignment.bottomLeft,
+      child: Text(
+        '$initDate - $finalDate',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
+        ),
+      ));
+}
+
+Widget destinationTrip(String destination) {
+  return Container(
+      margin: EdgeInsets.only(left: 16),
+      alignment: Alignment.bottomLeft,
+      child: Text(
+        destination,
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
+        ),
+      ));
 }

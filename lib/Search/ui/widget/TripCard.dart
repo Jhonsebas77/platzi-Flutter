@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/Search/ui/widget/productIcon.dart';
 
 class TripCard extends StatelessWidget {
   final String destination;
@@ -6,6 +7,7 @@ class TripCard extends StatelessWidget {
   final String finalDate;
   final Function function;
   final String pathImage;
+  final List<String> productList;
   TripCard({
     Key key,
     @required this.destination,
@@ -13,6 +15,7 @@ class TripCard extends StatelessWidget {
     @required this.initDate,
     @required this.function,
     @required this.pathImage,
+    @required this.productList,
   });
   @override
   Widget build(BuildContext context) {
@@ -60,12 +63,7 @@ class TripCard extends StatelessWidget {
                 left: 16,
                 bottom: 122,
               ),
-              child: Row(
-                children: [
-                  productIcon('HOTEL'),
-                  productIcon('FLIGHT'),
-                ],
-              ),
+              child: renderProductList(productList),
             ),
             destinationTrip(destination),
             datesTrip(initDate, finalDate)
@@ -99,28 +97,14 @@ class TripCard extends StatelessWidget {
   }
 }
 
-showIconProduct(String product) {
-  IconData iconHotel = Icons.hotel;
-  IconData iconFlight = Icons.airplanemode_active_outlined;
-  return product == 'HOTEL' ? iconHotel : iconFlight;
-}
-
-Widget productIcon(String product) {
+Widget renderProductList(List<String> productList) {
+  List<ProductIcon> productIconList = List<ProductIcon>();
+  productList.forEach((p) {
+    productIconList.add(ProductIcon(product: p));
+  });
   return Container(
-    alignment: Alignment.topLeft,
-    margin: EdgeInsets.only(right: 8),
-    child: Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.white,
-      ),
-      height: 26,
-      width: 26,
-      child: Icon(
-        showIconProduct(product),
-        color: Colors.black,
-        size: 20,
-      ),
+    child: Row(
+      children: productIconList,
     ),
   );
 }

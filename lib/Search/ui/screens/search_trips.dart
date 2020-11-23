@@ -16,6 +16,7 @@ class SearchTrips extends StatelessWidget {
               initDate: '7 de Dic',
               pathImage: "src/Assets/Images/IMG_1.jpg",
               function: () => print('Press Card and Go TO -> Cupertino'),
+              productList: ['HOTEL', 'HOTEL', 'FLIGHT'],
             ),
             TripCard(
               destination: 'Miami',
@@ -23,6 +24,7 @@ class SearchTrips extends StatelessWidget {
               initDate: '4 de Ene',
               pathImage: "src/Assets/Images/IMG_3.jpg",
               function: () => print('Press Card and Go TO -> Miami'),
+              productList: ['FLIGHT', 'HOTEL'],
             ),
           ],
         ),

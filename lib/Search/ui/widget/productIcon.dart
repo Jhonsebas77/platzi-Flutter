@@ -26,7 +26,9 @@ class ProductIcon extends StatelessWidget {
 }
 
 showIconProduct(String product) {
-  IconData iconHotel = Icons.hotel;
-  IconData iconFlight = Icons.airplanemode_active_outlined;
-  return product == 'HOTEL' ? iconHotel : iconFlight;
+  final iconByProduct = {
+    'HOTEL': Icons.hotel,
+    'FLIGHT': Icons.airplanemode_active_outlined,
+  };
+  return iconByProduct[product];
 }

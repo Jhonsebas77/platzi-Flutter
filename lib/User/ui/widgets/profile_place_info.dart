@@ -38,7 +38,7 @@ class ProfilePlaceInfo extends StatelessWidget {
           fontFamily: 'Lato',
           fontSize: 14.0,
           fontWeight: FontWeight.bold,
-          color: Colors.purpleAccent),
+          color: Colors.orange),
     );
 
     final card = Container(
@@ -62,7 +62,13 @@ class ProfilePlaceInfo extends StatelessWidget {
 
     return Stack(
       alignment: Alignment(0.8, 1.25),
-      children: <Widget>[card, FloatingActionButtonGreen()],
+      children: <Widget>[
+        card,
+        FloatingActionButtonGreen(
+          iconData: Icons.favorite_border,
+          onPressed: () {},
+        )
+      ],
     );
   }
 }

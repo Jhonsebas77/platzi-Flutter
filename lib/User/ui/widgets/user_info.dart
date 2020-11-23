@@ -1,11 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 
 class UserInfo extends StatelessWidget {
   User user;
-
   UserInfo(@required this.user);
-
   @override
   Widget build(BuildContext context) {
     final userPhoto = Container(
@@ -18,9 +17,7 @@ class UserInfo extends StatelessWidget {
           shape: BoxShape.circle,
           image: DecorationImage(
               fit: BoxFit.cover,
-              // image: AssetImage(user.photoURL), // Via Asset
-              image: NetworkImage(user.photoURL) // Via URL
-              )),
+              image: CachedNetworkImageProvider(user.photoURL))),
     );
 
     final userInfo = Column(

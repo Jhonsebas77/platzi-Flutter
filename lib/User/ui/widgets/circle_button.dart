@@ -30,7 +30,7 @@ class _CircleButton extends State<CircleButton> {
       child: Icon(
         widget.icon,
         size: widget.iconSize,
-        color: Color(0xFF4268D3),
+        color: Color(0xFFF57958),
       ),
     ));
   }

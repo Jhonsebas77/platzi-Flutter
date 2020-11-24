@@ -9,20 +9,23 @@ class SearchTrips extends StatelessWidget {
       margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
       child: Center(
         child: Column(
+          textDirection: TextDirection.ltr,
           children: [
             TripCard(
-              destination: 'Cupertino',
-              initDate: '5 de Oct',
-              finalDate: '7 de Dic',
-              pathImage: "src/Assets/Images/IMG_1.jpg",
+              destination: 'Nova Zelândia',
+              initDate: '14 de set',
+              finalDate: '17 de set',
+              pathImage:
+                  'https://s3.amazonaws.com/cvc-bancodeimagens/destinos/auckland-centro-visao-do-mar-nova-zelandia-1113858134.jpg',
               function: () => print('Press Card and Go TO -> Cupertino'),
               productList: ['HOTEL', 'HOTEL', 'FLIGHT'],
             ),
             TripCard(
-              destination: 'Miami',
-              initDate: '8 de Dic',
-              finalDate: '4 de Ene',
-              pathImage: "src/Assets/Images/IMG_3.jpg",
+              destination: 'Rio de Janeiro',
+              initDate: '3 de set',
+              finalDate: '8 de set',
+              pathImage:
+                  'https://s3.amazonaws.com/cvc-bancodeimagens/destinos/rio-de-janeiro-vista-aerea-cristo-redentor-rj-435627745.jpg',
               function: () => print('Press Card and Go TO -> Miami'),
               productList: ['FLIGHT', 'HOTEL'],
             ),

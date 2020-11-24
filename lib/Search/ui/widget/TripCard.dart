@@ -24,7 +24,7 @@ class TripCard extends StatelessWidget {
     final decorationImage = BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(pathImage),
+          image: NetworkImage(pathImage),
         ),
         borderRadius: BorderRadius.all(Radius.circular(10)),
         shape: BoxShape.rectangle,
@@ -61,6 +61,7 @@ class TripCard extends StatelessWidget {
     return InkWell(
         onTap: function,
         child: Stack(
+          textDirection: TextDirection.ltr,
           alignment: Alignment(0.9, 1.1),
           children: <Widget>[
             cardImage,

@@ -58,8 +58,10 @@ class TripCard extends StatelessWidget {
           )
         ]);
     final cardGradient = renderCardWithDecoration(decorationGradient);
-    return InkWell(
-        onTap: function,
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: MaterialButton(
+        onPressed: function,
         child: Stack(
           textDirection: TextDirection.ltr,
           alignment: Alignment(0.9, 1.1),
@@ -67,12 +69,15 @@ class TripCard extends StatelessWidget {
             cardImage,
             cardGradient,
             ItemCard(
-                destination: destination,
-                initDate: initDate,
-                finalDate: finalDate,
-                productList: productList),
+              destination: destination,
+              initDate: initDate,
+              finalDate: finalDate,
+              productList: productList,
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
 

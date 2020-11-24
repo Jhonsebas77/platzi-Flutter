@@ -8,8 +8,7 @@ class SearchTrips extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
       child: Center(
-        child: Column(
-          textDirection: TextDirection.ltr,
+        child: ListView(
           children: [
             TripCard(
               destination: 'Nova Zelândia',

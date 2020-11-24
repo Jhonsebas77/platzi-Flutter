@@ -29,6 +29,7 @@ class ItemCard extends StatelessWidget {
         bottom: 16,
       ),
       child: Column(
+        textDirection: TextDirection.ltr,
         children: [
           Container(
             margin: EdgeInsets.only(
@@ -64,6 +65,7 @@ Widget datesTrip(String initDate, String finalDate) {
       alignment: Alignment.bottomLeft,
       child: Text(
         '$initDate - $finalDate',
+        textDirection: TextDirection.ltr,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700,
@@ -78,6 +80,7 @@ Widget destinationTrip(String destination) {
       alignment: Alignment.bottomLeft,
       child: Text(
         destination,
+        textDirection: TextDirection.ltr,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700,

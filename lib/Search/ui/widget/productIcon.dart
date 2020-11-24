@@ -15,10 +15,13 @@ class ProductIcon extends StatelessWidget {
         ),
         height: 26,
         width: 26,
-        child: Icon(
-          showIconProduct(product),
-          color: Colors.black,
-          size: 20,
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Icon(
+            showIconProduct(product),
+            color: Colors.black,
+            size: 20,
+          ),
         ),
       ),
     );

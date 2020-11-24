@@ -16,16 +16,12 @@ class ItemCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    double width = 328;
-    double height = 230;
-    double left = 16;
-    double right = 16;
     return Container(
-      height: height,
-      width: width,
+      height: 230,
+      width: 328,
       margin: EdgeInsets.only(
-        left: left,
-        right: right,
+        left: 16,
+        right: 16,
         bottom: 16,
       ),
       child: Column(
@@ -54,6 +50,7 @@ Widget renderProductList(List<String> productList) {
   });
   return Container(
     child: Row(
+      textDirection: TextDirection.ltr,
       children: productIconList,
     ),
   );

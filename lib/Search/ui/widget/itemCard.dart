@@ -64,6 +64,7 @@ Widget datesTrip(String initDate, String finalDate) {
         '$initDate - $finalDate',
         textDirection: TextDirection.ltr,
         style: TextStyle(
+          fontFamily: "PlatziTrips",
           color: Colors.white,
           fontWeight: FontWeight.w700,
           fontSize: 20,
@@ -79,6 +80,7 @@ Widget destinationTrip(String destination) {
         destination,
         textDirection: TextDirection.ltr,
         style: TextStyle(
+          fontFamily: "PlatziTrips",
           color: Colors.white,
           fontWeight: FontWeight.w700,
           fontSize: 20,

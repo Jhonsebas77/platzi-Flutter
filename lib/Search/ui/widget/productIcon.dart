@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/lib/presentation/platzi_trips_icons.dart';
 
 class ProductIcon extends StatelessWidget {
   final String product;
@@ -30,8 +31,8 @@ class ProductIcon extends StatelessWidget {
 
 showIconProduct(String product) {
   final iconByProduct = {
-    'HOTEL': Icons.hotel,
-    'FLIGHT': Icons.airplanemode_active_outlined,
+    'HOTEL': PlatziTrips.hotel_product,
+    'FLIGHT': PlatziTrips.flight_product,
   };
   return iconByProduct[product];
 }

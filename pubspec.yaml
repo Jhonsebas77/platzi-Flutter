@@ -33,3 +33,6 @@ flutter:
     - family: Lato
       fonts:
         - asset: src/Assets/Fonts/Lato-Regular.ttf
+    - family:  PlatziTrips
+      fonts:
+        - asset: src/Assets/Fonts/PlatziTrips.ttf
